@@ -56,4 +56,8 @@ case $month in
 
 esac
 
-wget seclist.org/fulldisclosure/$year/$month/index.html --output-document=/tmp/seclist-`date +%d-%B-%Y-%T`.txt
+#download wegpage
+wget seclist.org/fulldisclosure/$year/$month/index.html --output-document=/tmp/seclist-$month-$year-draft.txt
+
+#OkDok
+cat /tmp/seclist-$month-$year-draft.txt | egrep '<a name=' | awk -F ">" '{print $3}' | awk -F "<" '{print $1}' > /tmp/seclist-$month-$year.txt
