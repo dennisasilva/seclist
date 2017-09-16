@@ -12,7 +12,7 @@
 echo "\nScript para fazer o download das informações da lista full-disclosure no seclist.ogr"
 
 #message year
-echo "\n\nPor favor insira o ano [YYYY]: Ex: 2017"
+echo "\nPor favor insira o ano [YYYY]: Ex: 2017"
 
 #variable year
 read year
@@ -46,10 +46,10 @@ esac
 #download wegpage
 wget seclist.org/fulldisclosure/$year/$month/index.html --output-document=/tmp/seclist-$month-$year-draft.txt
 
-#tratative
+#customize the file
 cat /tmp/seclist-$month-$year-draft.txt | egrep '<a name=' | awk -F ">" '{print $3}' | awk -F "<" '{print $1}' > /tmp/seclist-$month-$year.txt
 
-#remove DRAFT file
+#remove the DRAFT file
 rm -rf /tmp/seclist-$month-$year-draft.txt
 
 #output
