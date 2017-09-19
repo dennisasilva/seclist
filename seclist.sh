@@ -29,7 +29,7 @@ echo "Agora iremos coletar as informações solicitadas referente ao ano $year e
 case $month in
 
 01) month="Jan";;
-02) month="Fev";;
+02) month="Feb";;
 03) month="Mar";;
 04) month="Apr";;
 05) month="May";;
