@@ -1,0 +1,8 @@
+  1 #!/bin/bash
+  2 
+  3 #reset all counters and iptables rules
+  4 iptables -Z && iptables -F
+  5 #measure incoming traffic to IP Address
+  6 iptables -I INPUT 1 -s 10.11.0.30 -j ACCEPT
+  7 #measure outcoming traffic to IP Address
+  8 iptables -I OUTPUT 1 -d 10.11.0.30 -j ACCEP
